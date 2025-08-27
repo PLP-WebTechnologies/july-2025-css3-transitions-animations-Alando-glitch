@@ -1,0 +1,100 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f9f9f9;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+/* ------------------ Part 1: CSS3 Transitions & Animations ------------------ */
+
+/* Button Hover Effect */
+.hover-btn {
+  background: #6a4c93;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.hover-btn:hover {
+  background: #9a6aff;
+  transform: scale(1.1);
+}
+
+/* Smooth Fade Animation */
+.fade-box {
+  opacity: 0;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffd6a5;
+  width: 200px;
+  border-radius: 8px;
+  animation: fadeInOut 4s infinite;
+}
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Continuous Slide Animation */
+.slide-box {
+  margin: 20px auto;
+  padding: 20px;
+  background: #caffbf;
+  width: 200px;
+  border-radius: 8px;
+  animation: slideLeftRight 5s infinite alternate;
+}
+@keyframes slideLeftRight {
+  from { transform: translateX(-50px); }
+  to { transform: translateX(50px); }
+}
+
+/* ------------------ Part 3: Combining CSS + JS ------------------ */
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: #80ed99;
+  margin: 20px auto;
+  border-radius: 10px;
+  transition: transform 1s ease;
+}
+.box.animate {
+  transform: rotate(360deg) scale(1.2);
+}
+
+/* Modal Animation */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal.show {
+  display: flex;
+  animation: fadeIn 0.5s forwards;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  transform: translateY(-50px);
+  animation: slideDown 0.5s forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideDown {
+  from { transform: translateY(-50px); }
+  to { transform: translateY(0); }
+}
